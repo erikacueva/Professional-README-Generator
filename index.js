@@ -27,11 +27,6 @@ const prompts = [
         },
         {
             type: 'input',
-            name: 'contribution guidlines',
-            message: 'Who contributed to this project?', 
-        },
-        {
-            type: 'input',
             name: 'test instructions',
             message: 'Provide test instructions, if any.', 
         },
