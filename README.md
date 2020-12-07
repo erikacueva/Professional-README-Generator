@@ -22,7 +22,7 @@ node index
 ```
 
   ## Usage 
-  In order to use this application, users must first install Node.js onto their machine. Next, the user navigates to the folder that containes the files. From the terminal, the user will enter the commands noted above. In order to launch the application from the command line, the user simply enters "node index.js", and responds to a short series of prompts. A message will appear once all the responses are entered informing the user that their file has been generated. 
+  In order to use this application, users must first install Node.js onto their machine. Next, the user navigates to the folder that contains the files. From the terminal, the user will enter the commands noted above. In order to launch the application from the command line, the user simply enters "node index.js", and responds to a short series of prompts. A message will appear once all the responses are entered informing the user that their file has been generated. 
 
   ## Contributing
   If you would like to contribute to this project, please send me an email.
