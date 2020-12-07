@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
-// array of questions for user
+// user prompts array
 const prompts = [
   {
     type: "input",
@@ -68,7 +68,7 @@ const prompts = [
   },
 ];
 
-// function to write README file
+// function that writes the README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log("You created your README file!")
