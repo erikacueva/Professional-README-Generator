@@ -36,7 +36,7 @@ const prompts = [
   },
   {
     type: "input",
-    name: "GitHubusername",
+    name: "githubusername",
     message: "What is your GitHub username?",
   },
   {

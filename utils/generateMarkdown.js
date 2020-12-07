@@ -1,14 +1,15 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  // license choices and corresponding badges
-  var licBadge = '';
+  // license choices and their corresponding badges
+  var licBadge = "";
+  var LicenseText = "";
 
   switch (data.license1) {
     case "Boost Software License 1.0":
       licBadge =
         "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
 
-      ` Boost Software License - Version 1.0 - August 17th, 2003 '
+      LicenseText = ` Boost Software License - Version 1.0 - August 17th, 2003 '
 
     Permission is hereby granted, free of charge, to any person or organization obtaining a copy of the software and accompanying documentation covered by
     this license (the Software) to use, reproduce, display, distribute,
@@ -36,8 +37,7 @@ function generateMarkdown(data) {
     case "MIT":
       licBadge =
         "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-
-      `MIT License
+      LicenseText = `MIT License
 
       Copyright (c) ${data.year} ${data.name}
       
@@ -65,55 +65,38 @@ function generateMarkdown(data) {
       licBadge =
         "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
 
-      `Copyright (C) ${data.year} ${data.name}
+      LicenseText = `Copyright (C) ${data.year} ${data.name}
 
-        This program is free software: you can redistribute it and/or modify
-        it under the terms of the GNU Affero General Public License as published
-        by the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Affero General Public License as published
+      by the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
     
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU Affero General Public License for more details.
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU Affero General Public License for more details.
     
-        You should have received a copy of the GNU Affero General Public License
-        along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
+      You should have received a copy of the GNU Affero General Public License
+      along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
 
       break;
 
     case "The Unlicense":
       licBadge =
         "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
+      LicenseText = `This is free and unencumbered software released into the public domain.
 
-      `This is free and unencumbered software released into the public domain.
-
-          Anyone is free to copy, modify, publish, use, compile, sell, or
-          distribute this software, either in source code form or as a compiled
-          binary, for any purpose, commercial or non-commercial, and by any
-          means.
+      Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
           
-          In jurisdictions that recognize copyright laws, the author or authors
-          of this software dedicate any and all copyright interest in the
-          software to the public domain. We make this dedication for the benefit
-          of the public at large and to the detriment of our heirs and
-          successors. We intend this dedication to be an overt act of
-          relinquishment in perpetuity of all present and future rights to this
-          software under copyright law.
+      In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
           
-          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-          EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-          IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-          OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-          ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-          OTHER DEALINGS IN THE SOFTWARE.
-          
-          For more information, please refer to <https://unlicense.org>`;
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+      
+      For more information, please refer to <https://unlicense.org>`;
   }
-}
 
-return ` # ${data.title}
+  return ` # ${data.title}
 ${licBadge}
  
 
@@ -125,26 +108,27 @@ ${licBadge}
   ## Table of Contents 
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
+  * [Questions](#questions)
   * [License](#license)
   
   
   ## Installation
   
-  
+  ${data.installation}
 
   ## Usage 
-  
+  ${data.usage}
     
-  ## Credits
-  
+  ## Questions
+  If you have any questions, shoot me an email and I will be happy to assist: ${data.email}. If you want to see more of my work, here's my Githib profile:  [${data.githubusername}](https://github.com/${data.githubusername}). 
   
 
   
   ## License
-  
+  ${LicenseText}
 
 
 `;
+}
 
 module.exports = generateMarkdown;
